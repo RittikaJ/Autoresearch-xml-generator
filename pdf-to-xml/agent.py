@@ -60,7 +60,7 @@ def call_claude(page_pdf_bytes: bytes, prompt: str, page_num: int) -> str:
     pdf_b64 = base64.standard_b64encode(page_pdf_bytes).decode("utf-8")
 
     response = client.messages.create(
-        model="claude-sonnet-4-5-20250929",
+        model="claude-sonnet-4-6",
         max_tokens=8000,
         messages=[
             {
