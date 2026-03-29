@@ -28,14 +28,21 @@ Rules:
 
 Look at the LEFT MARGIN of the page. There are printed line numbers (1, 2, 3, ...) running down the left side. These numbers apply to EVERY line on the page, INCLUDING the header lines at the very top.
 
-For example, on page 1:
+For example, on page 1, the numbering is CONTINUOUS from header through body:
 - Line 1 = "LEGISLATURE OF THE STATE OF IDAHO"
 - Line 2 = "Sixty-eighth Legislature First Regular Session - 2025"
 - Line 3 = (blank)
 - Line 4 = "IN THE HOUSE OF REPRESENTATIVES"
-- ...and so on, continuously numbered through the entire page.
+- Line 5 = (blank)
+- Line 6 = "HOUSE BILL NO. 2"
+- Line 7 = (blank)
+- Line 8 = "BY STATE AFFAIRS COMMITTEE"
+- Line 9 = (blank)
+- Line 10 = "AN ACT"  ← THIS IS LINE 10, NOT LINE 1!
+- Line 11 = "RELATING TO ELECTIONS; ..."
+- ...continues through the entire page.
 
-The line numbers do NOT restart. They go from 1 through the last line (typically around 54 for a full page).
+The line numbers NEVER restart. They go from 1 through the last line (typically around 54 for a full page). DO NOT reset to 1 when the body text begins.
 
 You MUST:
 - Use the printed left-margin line numbers as the `num` attribute on each `<Line>`.
