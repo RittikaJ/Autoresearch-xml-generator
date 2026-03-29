@@ -58,7 +58,7 @@ You MUST:
 - Hyphenated words at line breaks: copy ONLY the letters that appear on THAT line. If the line ends "PE-", write "PE-", NOT "PETI-".
 - Do NOT merge lines. Each printed line = one `<Line>` element.
 - For header lines, collapse multiple spaces into a single space.
-- If there are unusual spaces within words (e.g., a word appears visually as "confl ict" with a space), reproduce the text EXACTLY as it appears, including the space.
+- If there are unusual spaces within words, reproduce them EXACTLY. For example, if a word appears visually as "confl ict" with a space between "confl" and "ict", write it as "confl ict" — do NOT correct it to "conflict".
 
 ## Output format
 
