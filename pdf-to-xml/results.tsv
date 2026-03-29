@@ -1,0 +1,42 @@
+commit	score	status	description
+80a791a	0.590379	keep	baseline prompt
+739094b	0.901923	keep	Fix line numbering: emphasize continuous numbering from left margin
+8493f0f	0.879487	discard	Improve underline/strikethrough boundary precision instructions
+fcb4a6d	0.863599	discard	Add strikethrough comma example, blank line reminder, underline restart hint
+f82e2a6	0.908333	keep	Preserve unusual spacing within words
+a026739	0.879644	discard	Improve underline boundary detection
+0942018	0.914392	keep	Emphasize blank lines before SECTION headings
+29c456d	0.691873	discard	Fix line numbering: count every visual line (broke page 2)
+d665a87	0.658350	discard	Clarify XML includes blank lines beyond PDF margin numbers
+1b81a3c	0.912671	keep	Add specific example for strikethrough comma detection
+6955478	0.901282	discard	Add extended example showing underline gaps and blank lines
+fefade0	0.918197	keep	Add visual pattern guidance for long underline/strikethrough passages
+08e75f3	0.909843	discard	Emphasize ALWAYS blank line before SECTION headings
+51f3133	0.920099	keep	More detailed visual description of underline/strikethrough
+504f95d	0.869929	discard	Add common legislative word replacement patterns
+9916485	0.866079	discard	Add step-by-step process for examining each word formatting
+a1d3f97	0.907940	discard	Add more examples of correct markup from tricky lines
+423f415	0.903391	discard	Add meticulous instruction for precision
+5283cd9	0.910000	discard	Remove key visual patterns section
+5d93c57	0.671933	discard	Rephrase line numbering: ignore margin numbers (broke page 2)
+a1d4040	0.884615	discard	Clarify blank lines without margin numbers
+ac183be	0.919520	keep	Add expert role framing to prompt
+e001b6b	0.898263	discard	More specific boundary instruction
+226564f	0.903391	discard	Explicitly define normal text
+f0eec7a	0.866079	discard	Radical prompt rewrite: shorter and concise
+3c9419e	0.876874	discard	Add note about single-word replacements
+e5d02d6	0.916294	keep	Reorder: underline/strikethrough first as MOST IMPORTANT
+d10cf5a	0.912671	discard	Add baseline line detection instruction
+caa4a4b	0.909843	discard	Remove overly conservative boundary instruction
+f78c918	0.698497	discard	Exclude margin line numbers from text (broke page 2)
+8367dd1	0.885897	discard	Add expected line counts (page 1=54, page 2=32)
+9084593	0.903391	discard	Stronger expert persona with accuracy claim
+ff53376	0.912671	discard	Clarify entire lines can be underlined in long passages
+4a26b5d	0.885897	discard	Do not use punctuation for underline boundaries
+21e76a8	0.635519	keep	Switch to claude-sonnet-4-6 (page 2 great, page 1 numbering broken)
+174a917	0.965651	keep	Sonnet 4.6 + stronger line numbering with full header example
+1d66dd2	0.985068	keep	Emphasize underline does NOT stop at sentence boundaries
+9a36080	0.979992	discard	Add specific example of underline past period
+3176632	0.953205	discard	Switch to Opus 4.6 (perfect page 1, but page 2 double-space issues)
+86e31a4	0.965651	keep	Stronger instruction about unusual word spacing
+2df554c	0.988336	keep	Stronger underline-past-period instruction with abstract example
