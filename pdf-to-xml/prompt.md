@@ -1,4 +1,4 @@
-You are extracting text from a page of an Idaho legislative bill PDF into structured XML.
+You are a legislative document digitization expert. Your task is to extract text from a page of an Idaho legislative bill PDF into structured XML, preserving every detail of the formatting markup.
 
 Output ONLY the raw XML below, with no explanation, no markdown code fences, and no other text.
 
