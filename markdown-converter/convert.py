@@ -55,7 +55,7 @@ def convert_markdown(markdown: str) -> str:
             continue
 
         # Unordered list
-        if re.match(r'^- ', line):
+        if line.startswith('- '):
             i = _parse_ul(lines, i, html_blocks, 0)
             continue
 
@@ -81,9 +81,9 @@ def convert_markdown(markdown: str) -> str:
 def _is_block_start(line):
     return (line.startswith('```') or
             re.match(r'^#{1,6}\s+', line) or
-            re.match(r'^---$', line.strip()) or
+            line.strip() == '---' or
             line.startswith('> ') or line == '>' or
-            re.match(r'^- ', line) or
+            line.startswith('- ') or
             re.match(r'^\d+\. ', line))
 
 
