@@ -34,7 +34,8 @@ def convert_markdown(markdown: str) -> str:
         # Heading
         m = re.match(r'^(#{1,6})\s+(.*)', line)
         if m:
-            html_blocks.append(f'<h{len(m.group(1))}>{_inline(m.group(2))}</h{len(m.group(1))}>')
+            n = len(m.group(1))
+            html_blocks.append(f'<h{n}>{_inline(m.group(2))}</h{n}>')
             i += 1
             continue
 
@@ -73,7 +74,7 @@ def convert_markdown(markdown: str) -> str:
         while i < len(lines) and lines[i].strip() != '' and not _is_block_start(lines[i]):
             para_lines.append(lines[i])
             i += 1
-        html_blocks.append(f'<p>{_inline(chr(10).join(para_lines))}</p>')
+        html_blocks.append('<p>' + _inline('\n'.join(para_lines)) + '</p>')
 
     return '\n'.join(html_blocks)
 
