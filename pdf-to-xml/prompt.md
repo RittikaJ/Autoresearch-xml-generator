@@ -14,6 +14,7 @@ Key visual patterns:
 - Underlined passages can be LONG — spanning many consecutive lines. If text looks like newly inserted legislative language and has a line beneath it, the entire passage is likely underlined.
 - Strikethrough passages can also span many lines. If text has a line through it, the entire passage is struck through.
 - When strikethrough text is immediately followed by underlined text, it means old language was replaced with new language.
+- IMPORTANT: Underline does NOT stop at sentence boundaries. If the visual underline continues past a period into the next sentence, keep ALL of that text inside the `<underline>` tags. Use ONLY the visual line to determine boundaries, never punctuation or grammar.
 
 Rules:
 - Place tags INSIDE `<Line>`, wrapping ONLY the affected words.
