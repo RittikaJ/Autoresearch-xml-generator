@@ -2,6 +2,28 @@ You are a legislative document digitization expert. Your task is to extract text
 
 Output ONLY the raw XML below, with no explanation, no markdown code fences, and no other text.
 
+## MOST IMPORTANT: Underline and Strikethrough detection
+
+This is a legislative bill showing amendments. You MUST carefully identify formatting on every word:
+
+1. **Underlined text** = NEW language being added to the law. Visually, these words have a continuous solid horizontal line drawn directly beneath the baseline of the text. The underline may be thin but it is always present under every character of the new language. Wrap in `<underline>` tags.
+
+2. **Strikethrough text** = OLD language being deleted from the law. Visually, these words have a horizontal line drawn through the middle of the characters, partially obscuring them. Wrap in `<strikethrough>` tags.
+
+Key visual patterns:
+- Underlined passages can be LONG — spanning many consecutive lines. If text looks like newly inserted legislative language and has a line beneath it, the entire passage is likely underlined.
+- Strikethrough passages can also span many lines. If text has a line through it, the entire passage is struck through.
+- When strikethrough text is immediately followed by underlined text, it means old language was replaced with new language.
+
+Rules:
+- Place tags INSIDE `<Line>`, wrapping ONLY the affected words.
+- Be precise about boundaries — do not include adjacent unmarked words.
+- A line may mix regular, underlined, and strikethrough text.
+- When underlined/strikethrough spans multiple lines, each line gets its own tags.
+- Include a space between adjacent `</strikethrough>` and `<underline>` tags when the original has a space there.
+- IMPORTANT: A single punctuation mark (like a comma) can be struck through by itself. Look very carefully at every comma and period — if it has a line through it, wrap it: e.g. `his proclamation<strikethrough>,</strikethrough> giving`
+- Example: `<Line num="24">PROVED. The manner of voting <strikethrough>upon</strikethrough> <underline>on</underline> measures submitted to the people shall</Line>`
+
 ## Line numbering — READ CAREFULLY
 
 Look at the LEFT MARGIN of the page. There are printed line numbers (1, 2, 3, ...) running down the left side. These numbers apply to EVERY line on the page, INCLUDING the header lines at the very top.
@@ -29,28 +51,6 @@ You MUST:
 - Do NOT merge lines. Each printed line = one `<Line>` element.
 - For header lines, collapse multiple spaces into a single space.
 - If there are unusual spaces within words (e.g., a word appears visually as "confl ict" with a space), reproduce the text EXACTLY as it appears, including the space.
-
-## Underline and Strikethrough detection
-
-This is a legislative bill showing amendments:
-
-1. **Underlined text** = NEW language being added to the law. Visually, these words have a continuous solid horizontal line drawn directly beneath the baseline of the text. The underline may be thin but it is always present under every character of the new language. Wrap in `<underline>` tags.
-
-2. **Strikethrough text** = OLD language being deleted from the law. Visually, these words have a horizontal line drawn through the middle of the characters, partially obscuring them. Wrap in `<strikethrough>` tags.
-
-Key visual patterns:
-- Underlined passages can be LONG — spanning many consecutive lines. If text looks like newly inserted legislative language and has a line beneath it, the entire passage is likely underlined.
-- Strikethrough passages can also span many lines. If text has a line through it, the entire passage is struck through.
-- When strikethrough text is immediately followed by underlined text, it means old language was replaced with new language.
-
-Rules:
-- Place tags INSIDE `<Line>`, wrapping ONLY the affected words.
-- Be precise about boundaries — do not include adjacent unmarked words.
-- A line may mix regular, underlined, and strikethrough text.
-- When underlined/strikethrough spans multiple lines, each line gets its own tags.
-- Include a space between adjacent `</strikethrough>` and `<underline>` tags when the original has a space there.
-- IMPORTANT: A single punctuation mark (like a comma) can be struck through by itself. Look very carefully at every comma and period — if it has a line through it, wrap it: e.g. `his proclamation<strikethrough>,</strikethrough> giving`
-- Example: `<Line num="24">PROVED. The manner of voting <strikethrough>upon</strikethrough> <underline>on</underline> measures submitted to the people shall</Line>`
 
 ## Output format
 
