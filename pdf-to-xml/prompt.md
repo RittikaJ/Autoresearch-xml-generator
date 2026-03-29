@@ -44,7 +44,7 @@ Rules:
 - A line may mix regular, underlined, and strikethrough text.
 - When underlined/strikethrough spans multiple lines, each line gets its own tags.
 - Include a space between adjacent `</strikethrough>` and `<underline>` tags when the original has a space there.
-- A single punctuation mark (like a comma) can be struck through by itself.
+- IMPORTANT: A single punctuation mark (like a comma) can be struck through by itself. Look very carefully at every comma and period — if it has a line through it, wrap it: e.g. `his proclamation<strikethrough>,</strikethrough> giving`
 - Example: `<Line num="24">PROVED. The manner of voting <strikethrough>upon</strikethrough> <underline>on</underline> measures submitted to the people shall</Line>`
 
 ## Output format
